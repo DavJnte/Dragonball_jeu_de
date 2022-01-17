@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="DragonBall Tournament est un jeu de combat tour par tour ou vous pouvez incarner votre
+    personnage préféré du manga DragonBall !">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>DRAGON BALL TOURNAMENT</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" >
+</head>
+<body> 
+    <!-- TITLE -->
+    <header class="container">
+        <img class="titre" src="./image/Titre/titre.png" alt="Titre" type="image">
+
+          <!-- BOUTTON Du MENU -->
+        <div class="container">
+            <button data-toggle="modal" data-target="#regle_jeu" type="button">RÈGLE DU JEU</button>
+            <button onclick="window.location.reload()">NOUVELLE PARTIE</button>
+            <button type="button" id="Nameplayer" onClick="editNames()">NOM JOUEUR</button>
+        </div>
+
+        <!-- REGLE DU JEU -->
+        <div class="modal fade" id="regle_jeu" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Règle du jeu</h5>
+                </div>
+                <img type="images" src="./image/règles/gp.png" alt="grand-prêtre">
+                <div class="modal-body">
+                  <p>BIENVENUE AU TOURNOIS DU POUVOIR !</p>
+                  <p>Choisissez un personnage parmis la <strong>Liste des combatants</strong> !</p>
+                  <p></p>
+                  <p><strong>Votre Objectif</strong> : Cumuler 100 points de dégats pour mettre Ko votre adversaire !</p>
+                  <p>Lancer le dé en appuyant sur le bouton : <strong>Lancer le dé</strong>
+                  ,vous pouvez lancer le dé autant de fois que vous voulez pour charger votre attaque.</p>
+                  <p>Une fois que votre score cumulé vous convient appuyer sur le boutton <strong> ATTAQUER</strong> 
+                    pour lancer votre attaque.</p>
+                  <p>Mais Attention ! Si votre dé tombe sur <strong>1</strong>, vous manquerez votre attaque et ça sera au tour de votre adversaire !</p> 
+                  <p>Que le combat COMMENCE !</p> 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </header>
+
+    <!-- SELECTION DES JOUEURS -->
+    <main class="container">
+        <div class="row">
+
+            <!-- JOUEUR 1 -->
+            <div id="player1" class="player col-6 col-lg-4">
+                <h2 class="Player1">JOUEUR 1</h2>
+                <select name="player1" id="select-player-1" style="width: 75%;">
+                    <option value="">Liste des combatants</option>
+                    <option value="Goku">SSGSS Son Goku</option>
+                    <option value="VEGETA">SSGSS Vegeta</option>
+                    <option value="Duogetv">Duo Goku/Vegeta</option>
+                    <option value="Jiren">Jiren</option>
+                    <option value="Piccolo">Piccolo</option>
+                    <option value="Broly">Broly (DBSS)</option>
+                    <option value="KRILLIN">Krillin</option>
+                    <option value="FREEZER">Golden Freezer</option>
+                    <option value="GOHAN">ULTIMATE Gohan</option>
+                    <option value="TOPPO">(GOD OF DESTRUCTION) Toppo</option>
+                </select>
+                <img src="image/illustration/interogation.png" alt="Combatant" width="100%" class="player-sound-1" 
+                id="imgPlayer1" style="border: 1px solid black; margin-top: 10px;" />
+
+                <br>
+                <br>
+                
+                <div class="container" id="action">
+                    <div class="row">
+                        <div class="col-4 col-lg-11">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="player-1-panel">
+                                        <button id="chargerki1">CHARGER KI :<div class="player-current-score" id="current-0"></div>
+                                            <img class="charge" src="./image/button/charge.png" alt="Charge energie" type="image"></button>
+                                        </div>
+                                    </div> 
+                                    <div class="col-lg-6">
+                                        <div class="degat1"> DÉGATS CAUSÉ
+                                            <div class="player-score" id="score-0"></div>
+                                            <div class="player-current-box"></div>
+                                            <img class="attack" src="./image/button/attaque.png" alt="degat">
+                                    </div>
+                                </div>                               
+                            </div>                 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--BOUTTON GAME-->
+            <div class="col-lg-4">
+                <div class="menu">
+                    <button id="lancer" class="btn-roll">Lancer le dé</button>
+                    <button id="attaquer" class="btn-hold">ATTAQUER</button>
+                </div>
+                    <img src="./image/dés/dice-1.png" alt="dé" class="dice"> 
+            </div>
+    
+
+            <!-- JOUEUR 2 -->
+            <div id="player2" class="player col-6 col-lg-4">
+                <div class="player-name" id="name-2"></div>
+                <h2 class="Player2">JOUEUR 2</h2>
+                <select name="player2" id="select-player-2" style="width: 75%;">
+                    <option value="">Liste des combatants</option>
+                    <option value="Goku">SSGSS Son Goku</option>
+                    <option value="VEGETA">SSGSS Vegeta</option>
+                    <option value="Duogetv">Duo Goku/Vegeta</option>
+                    <option value="Jiren">Jiren</option>
+                    <option value="Piccolo">Piccolo</option>
+                    <option value="Broly">Broly (DBSS)</option>
+                    <option value="KRILLIN">Krillin</option>
+                    <option value="FREEZER">Golden Freezer</option>
+                    <option value="GOHAN">ULTIMATE Gohan</option>
+                    <option value="TOPPO">(GOD OF DESTRUCTION) Toppo</option>
+                </select>
+                <img src="image/illustration/interogation.png" alt="interogation" width="100%" class="player-sound-2" 
+                id="imgPlayer2" style="border: 1px solid black; margin-top: 10px;" />
+
+                <br>
+                <br>
+
+                <div class="container" id="action2">
+                    <div class="row">
+                        <div class="col-4 col-lg-11">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <button id="chargerki2">CHARGER Ki :
+                                        <div class="player-current-box">
+                                            <div class="player-current-score" id="current-1">0</div>
+                                            <img class="charge" src="./image/button/charge.png" alt="Charge energie" type="image">
+                                        </div>           
+                                    </button>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="degat2"> DÉGATS CAUSÉ
+                                        <div class="player-2-panel">
+                                            <div class="player-score" id="score-1">0</div>
+                                            <img class="attack" src="./image/button/attaque.png" alt="degat">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </main>
+   
+  
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
