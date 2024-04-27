@@ -1,0 +1,65 @@
+body{
+    background-image: url('./image/Arene/arene.jpg');
+    background-size: cover;
+    font-family: 'Lato', sans-serif;
+    background-position: fixed;
+}
+
+header{
+    text-align: center;
+}
+
+.container{
+    font-family: 'Lato', sans-serif;
+}
+
+.dice{
+    max-width: 150px;
+    margin-top: 200px;
+    margin-left: 1px;
+}
+
+.menu{
+    font-family: 'Lato', sans-serif;
+}
+
+h2{
+color: rgb(252, 33, 33);
+font-family: 'Lato', sans-serif;
+text-align: center;
+}
+
+.titre{
+    max-width: 600px;
+}
+
+header, main{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.attack{
+    max-width:69px;
+}
+
+.charge{
+    max-width: 60px;
+}
+
+.player{
+    border: 2px solid rgb(0, 0, 0);
+    background: rgb(250, 249, 249);
+    padding-bottom: 50px; 
+    text-align: center;
+    font-family: 'Lato', sans-serif;  
+}
+
+#action{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+#action2{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
