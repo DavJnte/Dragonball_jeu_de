@@ -1,2 +1,4 @@
-            debloquer()
-            soundback()
+            //bloque la liste du joueur 2 
+            player2.disabled = true
+            debloquer();
+            soundback();

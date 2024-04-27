@@ -20,7 +20,7 @@
 
           <!-- BOUTTON Du MENU -->
         <div class="container">
-            
+            <button class="bttn-slant bttn-md bttn-primary">medium</button>
             <button class="button-64" data-toggle="modal" data-target="#regle_jeu" type="button">RÈGLE DU JEU</button>
             <button onclick="window.location.reload()">NOUVELLE PARTIE</button>
             <button type="button" id="Nameplayer" onClick="editNames()">NOM JOUEUR</button>
@@ -112,7 +112,6 @@
                     <img src="./image/dés/dice-1.png" alt="dé" class="dice"> 
             </div>
     
-
             <!-- JOUEUR 2 -->
             <div id="player2" class="player col-6 col-lg-4">
                 <div class="player-name" id="name-2"></div>
@@ -132,10 +131,8 @@
                 </select>
                 <img src="image/illustration/interogation.png" alt="interogation" width="100%" class="player-sound-2" 
                 id="imgPlayer2" style="border: 1px solid black; margin-top: 10px;" />
-
                 <br>
                 <br>
-
                 <div class="container" id="action2">
                     <div class="row">
                         <div class="col-4 col-lg-11">
@@ -162,8 +159,13 @@
                 </div>
             </div>
         </div>  
-    </main>
-   
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p id="modalMessage"></p>
+            </div>
+          </div>   
+    </main>  
   
     <!-- JavaScript Bundle with Popper -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
