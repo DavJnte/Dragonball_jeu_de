@@ -5,29 +5,38 @@
     
         //Réatribution des points à 0 lors du changement de joueur
         document.getElementById('current-0').textContent = '0';
-        document.getElementById('current-1').textContent = '0';}
-        let Nameplayer1 = "Player 1";
-        let Nameplayer2 = "Player 2";
+        document.getElementById('current-1').textContent = '0';
+    }
+        let Nameplayer1 = "Joueur 1";
+        let Nameplayer2 = "Joueur 2";
 
 //Modifier  les noms des joueurs 
 function editNames() {
     let newNameplayer1, newNameplayer2;
     
-    //Impossible de laisser un champ vide
-    do {newNameplayer1 = prompt("Nom JOUEUR 1");
-    } while (newNameplayer1.trim() === "");
-    do { newNameplayer2 = prompt("Nom JOUEUR 2");
-    } while (newNameplayer2.trim() === "");
+    // Impossible de laisser un champ vide ou de dépasser 10 caractères
+    do {
+        newNameplayer1 = prompt("Nom JOUEUR 1 (10 caractères maximum)");
+    } while (newNameplayer1.trim() === "" || newNameplayer1.length > 10);
+    do {
+        newNameplayer2 = prompt("Nom JOUEUR 2 (10 caractères maximum)");
+    } while (newNameplayer2.trim() === "" || newNameplayer2.length > 10);
+    
     Nameplayer1 = newNameplayer1 || Nameplayer1;
     Nameplayer2 = newNameplayer2 || Nameplayer2;
+    
     document.querySelector("h2.Player1").innerHTML = Nameplayer1;
     document.querySelector("h2.Player2").innerHTML = Nameplayer2;
-    nombloquer();}
+    
+    nombloquer();
+}
+
 
 function joueur2debloquer() {document.getElementById('select-player-2').disabled = false;}
 function bloquer() { ['chargerki1', 'chargerki2', 'attaquer', 'lancer', 'select-player-2'].forEach(id => {document.getElementById(id).disabled = true;});}
 function debloquer() { ['chargerki1', 'chargerki2', 'attaquer', 'lancer'].forEach(id => {  document.getElementById(id).disabled = false; });}
 function disableNameInput() { document.getElementById('Nameplayer').disabled = true;}choicePlayer();bloquer();
+
 
 //Les joueurs choisisent un personnage
 
@@ -73,7 +82,7 @@ function disableNameInput() { document.getElementById('Nameplayer').disabled = t
         document.getElementById('current-1').textContent = '0';}init();lancementdé();points();
 
         function lancementdé(){
-    document.querySelector('.btn-roll').addEventListener('click', function() {
+        document.querySelector('.btn-roll').addEventListener('click', function() {
         if(gamePlaying) {
             //On lance le dé      
            var dice = Math.floor(Math.random() * 6) + 1;         
@@ -93,14 +102,24 @@ function disableNameInput() { document.getElementById('Nameplayer').disabled = t
                 nextPlayer();}}});}
    
                 function points(){
-        document.querySelector('.btn-hold').addEventListener('click', function() {
+                document.querySelector('.btn-hold').addEventListener('click', function() {
             if (gamePlaying) {
                 // ATTRIBUE LES POINTS AU JOUEUR
                 scores[activePlayer] += roundScore;
                 if(activePlayer == 0){
-                    if(roundScore==0){}else{ damage(); }}
+                    if(roundScore==0){}else{ damage();
+                        var damageEffect = document.getElementById('damageEffect2');
+                        damageEffect.style.animation = 'none';
+                        void damageEffect.offsetWidth; // Réinitialiser l'animation
+                        damageEffect.style.animation = null;
+                     }}
                 if(activePlayer ==1){
-                    if(roundScore==0){ } else{ damage();}}
+                    if(roundScore==0){ } else{ damage();
+                        var damageEffect = document.getElementById('damageEffect1');
+                        damageEffect.style.animation = 'none';
+                        void damageEffect.offsetWidth; // Réinitialiser l'animation
+                        damageEffect.style.animation = null;
+                    }}
                 
                     // DEGAT TOTAL DES JOUEURS ADDITIONNÉ
                 document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];   
@@ -111,21 +130,47 @@ function disableNameInput() { document.getElementById('Nameplayer').disabled = t
                     var modalMessage = document.getElementById("modalMessage");
                     modalMessage.innerHTML = message;
                     modal.style.display = "block";
+                    // Centrer verticalement et horizontalement
+                    modal.style.justifyContent = "center";
+                    modal.style.alignItems = "center";
+                    modal.style.textAlign = "center"
                     var span = document.getElementsByClassName("close")[0];
                     span.onclick = function() {
-                        modal.style.display = "none";} }
+                        modal.style.display = "none";
+                    }
+                }
+                
                 if (scores[activePlayer] >= 100) {
                     soundwin();
                     if (scores[0] >= 100) {
-                        customAlert('BRAVO ! Nous avons un GAGNANT, FÉLICITATIONS AU JOUEUR ' + Nameplayer1);} else {
-                        customAlert('BRAVO ! Nous avons un GAGNANT, FÉLICITATIONS AU JOUEUR ' + Nameplayer2);}
+                        customAlert('Nous avons un GAGNANT, FÉLICITATIONS A ' + Nameplayer1);} 
+                        else {
+                        customAlert('Nous avons un GAGNANT, FÉLICITATIONS A ' + Nameplayer2);}
                     // Arrêt total du jeu
                     document.querySelector('.dice').style.display = 'none';
                     gamePlaying = false;
                     bloquer();
                 }else {// SI CONDITION PAS RESPECTÉ ALORS JEU CONTINUE 
-                    nextPlayer();}}});}
+                    nextPlayer();}
+                }
+            });}
 
+// Définir une variable de contrôle en dehors de la fonction
+var alertTriggered = false;
+
+function special() {
+    //  Si un joueur dépasse les 50 points alors la technique spéciale est activée
+    if (scores[activePlayer] > 50 && !alertTriggered) {
+        if (scores[0] > 50) {
+            customAlert('Technique Spéciale du Joueur ' + Nameplayer1 + ' Activée');
+        } else {
+            customAlert('Technique Spéciale du Joueur ' + Nameplayer2 + ' Activée');
+        }
+        // Mettre la variable de contrôle à true pour indiquer que l'alerte a été déclenchée
+        alertTriggered = true;
+    }
+}
+special();
 //Son et Musique -----------------------------------------------------------
 //Son roulement de de
 function soundroll(){let audio = new Audio('./Son&Musique/soundeffect/sondé.mp3'); audio.play(); audio.volume = 0.5;}

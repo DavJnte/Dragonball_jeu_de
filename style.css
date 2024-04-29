@@ -1,100 +1,324 @@
-body{
-    background-image: url('./image/Arene/arene.jpg');
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('./image/Arene/arene.jpg');
+    font-family: 'Lato', sans-serif;
+    /* Définit l'arrière-plan en taille couvrant l'ensemble de la page */
     background-size: cover;
-    font-family: 'Lato', sans-serif;
-    background-position: fixed;
+    /* Empêche la répétition de l'image de fond */
+    background-repeat: no-repeat;
+    /* Positionne l'image de fond de manière fixe par rapport à la fenêtre du navigateur */
+    background-attachment: fixed;
 }
 
-header{
-    text-align: center;
+@media screen and (max-width: 768px) {
+  body {
+      width: 100%; /* Utiliser la largeur totale sur les écrans étroits */
+      height: auto; /* Hauteur automatique */
+  }
 }
 
-.container{
-    font-family: 'Lato', sans-serif;
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
 }
 
-.dice{
-    max-width: 150px;
-    margin-top: 200px;
-    margin-left: 1px;
+/* Header */
+header {
+  text-align: center;
+  padding: 20px 0;
 }
 
-.menu{
-    font-family: 'Lato', sans-serif;
+.titre {
+  max-width: 100%;
 }
 
-h2{
-color: rgb(252, 33, 33);
-font-family: 'Lato', sans-serif;
-text-align: center;
+/* Bouton Menu */
+.sandwich {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff0d;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Séparation */
 }
 
-.titre{
-    max-width: 600px;
+.button-64,
+#Nameplayer {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #9119ed;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-header, main{
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 30px;
+.button-64:hover,
+#Nameplayer:hover {
+  background-color: #ced171;
 }
 
-.attack{
-    max-width:69px;
+.button-64:focus,
+#Nameplayer:focus {
+  outline: none;
 }
 
-.charge{
-    max-width: 60px;
+/* Modal */
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
 }
 
-.player{
-    border: 2px solid rgb(0, 0, 0);
-    background: rgb(250, 249, 249);
-    padding-bottom: 50px; 
-    text-align: center;
-    font-family: 'Lato', sans-serif;  
+.modal-title {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-#action{
-    text-align: center;
-    font-family: 'Lato', sans-serif;
-}
-#action2{
-    text-align: center;
-    font-family: 'Lato', sans-serif;
+.modal-body {
+  font-size: 18px;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.btn-close {
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #000000;
+  opacity: 0.5;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+/* Main */
+main {
+  padding: 20px 0;
+}
+
+.player {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.player h2 {
+  margin-top: 0;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.custom-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  background-color: #ffffff;
+  font-size: 16px;
+}
+
+.image-container {
+  text-align: center;
+  margin-bottom: 20px; /* Séparation */
+}
+
+.image-container img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.container-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.container-action button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.container-action button:hover {
+  background-color: #0056b3;
+}
+
+.container-action button:focus {
+  outline: none;
+}
+
+/* Menu */
+.menu {
+  text-align: center;
+  margin-bottom: 20px; /* Séparation */
+}
+
+.menu .btn-roll,
+.menu .btn-hold {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menu .btn-roll:hover,
+.menu .btn-hold:hover {
+  background-color: #0056b3;
+}
+
+.menu .btn-roll:focus,
+.menu .btn-hold:focus {
+  outline: none;
+}
+
+/* Dice */
+.dice-container {
+  text-align: center;
+  background-color: #000000;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px; /* Séparation */
+}
+
+.dice {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .player {
+      padding: 10px;
+  }
+.row{
+  width: 500px;
+}
+  .container-action button {
+      font-size: 14px;
+  }
+
+  .menu .btn-roll,
+  .menu .btn-hold {
+      font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* Réorganisez les éléments pour s'adapter aux écrans plus petits */
+  .player {
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    margin-bottom: 20px;
   }
-  
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+
+  .menu {
+    flex-direction: column;
   }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+  .row{
+    width: 500px;
+  }
+  .dice-container {
+    text-align: center;
+  }
+}
+
+/* Style du bouton "CHARGER Ki" */
+
+#chargerki2, #chargerki1 {
+    border-radius: 5px;
+}
+
+/* Style des boîtes de score */
+.player-current-box, .player-score, #current-0{
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 18px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
+}
+
+/* Style des boutons de menu */
+.menu button {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  color: white; /* Couleur du texte */
+  border: none; /* Suppression de la bordure */
+}
+
+/* Style au survol */
+.menu button:hover {
+  background-color: #6c757d; /* Changement de couleur au survol */
+}
+
+
+
+
+#damageEffect2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-image: url('image/degat/degat.png'); /* Remplacer 'damage.png' par le chemin de votre image d'effet de dégât */
+  background-size: cover;
+  opacity: 0;
+  animation: damageAnimation2 0.5s ease;
+  top: 50%;
+}
+
+@keyframes damageAnimation2 {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2); }
+}
+
+#damageEffect1 {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  background-image: url('image/degat/degat.png'); /* Remplacer 'damage.png' par le chemin de votre image d'effet de dégât */
+  background-size: cover;
+  opacity: 0;
+  animation: damageAnimation 0.5s ease;
+  top: 50%;
+  right: 70%;
+}
+
+@keyframes damageAnimation {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2); }
+}

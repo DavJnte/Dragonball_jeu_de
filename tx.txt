@@ -1,0 +1,396 @@
+body{
+    background-image: url('./image/Arene/arene.jpg');
+    font-family: 'Lato', sans-serif;
+    /* Définit l'arrière-plan en taille couvrant l'ensemble de la page */
+    background-size: cover;
+    /* Empêche la répétition de l'image de fond */
+    background-repeat: no-repeat;
+    /* Positionne l'image de fond de manière fixe par rapport à la fenêtre du navigateur */
+    background-attachment: fixed;
+}
+
+.row{
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+header{
+    text-align: center;
+}
+
+.container{
+    font-family: 'Lato', sans-serif;
+}
+
+.dice{
+    max-width: 150px;
+    margin-top: 200px;
+    margin-left: 1px;
+}
+
+.menu{
+    font-family: 'Lato', sans-serif;
+}
+
+h2{
+color: rgb(252, 33, 33);
+font-family: 'Lato', sans-serif;
+text-align: center;
+}
+
+.titre{
+    max-width: 600px;
+}
+
+header, main{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.attack{
+    max-width:69px;
+}
+
+.charge{
+    max-width: 60px;
+}
+
+.player{
+    border: 2px solid rgb(0, 0, 0);
+    background: rgb(250, 249, 249);
+    padding-bottom: 50px; 
+    text-align: center;
+    font-family: 'Lato', sans-serif;  
+}
+
+#action{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+#action2{
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .btn-roll {
+    position: relative;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    border-radius: 0.8em;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    color: ghostwhite;
+    overflow: hidden;
+  }
+  
+  .btn-roll svg {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+  }
+  
+  .btn-roll span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8em 1.2em 0.8em 1.05em;
+  }
+  
+  .btn-roll::before,
+  .btn-roll::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  .btn-roll::before {
+    content: "Lancer le dé";
+    background: #ffffff;
+    color: black;
+  }
+  
+  .btn-roll:hover::before {
+    transform: translate3d(100%, 0, 0);
+  }
+  
+  .btn-roll:active {
+    transform: scale(0.95);
+  }
+  
+   
+   .attacker {
+    height: 3em;
+    width: 8em;
+    border: none;
+    border-radius: 10em;
+    background: #016DD9;
+    font-size: 17px;
+    color: #ffffff;
+    font-family: inherit;
+    font-weight: 500;
+   }
+   
+   .attacker:hover {
+    animation: shake3856 0.3s linear infinite both;
+   }
+   
+   @keyframes shake3856 {
+    0% {
+     -webkit-transform: translate(0);
+     transform: translate(0);
+    }
+   
+    20% {
+     -webkit-transform: translate(-2px, 2px);
+     transform: translate(-2px, 2px);
+    }
+   
+    40% {
+     -webkit-transform: translate(-2px, -2px);
+     transform: translate(-2px, -2px);
+    }
+   
+    60% {
+     -webkit-transform: translate(2px, 2px);
+     transform: translate(2px, 2px);
+    }
+   
+    80% {
+     -webkit-transform: translate(2px, -2px);
+     transform: translate(2px, -2px);
+    }
+   
+    100% {
+     -webkit-transform: translate(0);
+     transform: translate(0);
+    }
+   }
+
+
+   .btn-56,
+.btn-56 *,
+.btn-56 :after,
+.btn-56 :before,
+.btn-56:after,
+.btn-56:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-56 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+
+.btn-56:disabled {
+  cursor: default;
+}
+
+.btn-56:-moz-focusring {
+  outline: auto;
+}
+
+.btn-56 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-56 [hidden] {
+  display: none;
+}
+
+.btn-56 {
+  border: 1px solid;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  -webkit-mask-image: none;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-56:hover {
+  -webkit-animation: pulse 0.5s;
+  animation: pulse 0.5s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #fff;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #fff;
+  }
+}
+
+
+#damageEffect2 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-image: url('image/degat/degat.png'); /* Remplacer 'damage.png' par le chemin de votre image d'effet de dégât */
+  background-size: cover;
+  opacity: 0;
+  animation: damageAnimation2 0.5s ease;
+  top: 50%;
+}
+
+@keyframes damageAnimation2 {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2); }
+}
+#damageEffect1 {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-image: url('image/degat/degat.png'); /* Remplacer 'damage.png' par le chemin de votre image d'effet de dégât */
+  background-size: cover;
+  opacity: 0;
+  animation: damageAnimation 0.5s ease;
+  top: 30%;
+}
+
+@keyframes damageAnimation {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2); }
+}
+
+
+/* Style the select element */
+.custom-select {
+  width: 75%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none; /* Safari and Chrome */
+  -moz-appearance: none; /* Firefox */
+  background-color: #f8f8f8;
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="20px" width="20px"><path d="M16 22L8 14h16z"/></svg>'); /* Custom arrow icon */
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+}
+
+/* Style the options */
+.custom-select option {
+  padding: 10px;
+}
+
+
+.image-container {
+  width: 100%;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.player-sound-2 {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Style du conteneur sandwich */
+.sandwich {
+  display: flex; /* Utilise un affichage flex pour aligner les boutons horizontalement */
+  justify-content: center; /* Centre les boutons horizontalement */
+  align-items: center; /* Centre les boutons verticalement */
+  background-color: #f1f1f1; /* Couleur de fond */
+  padding: 10px; /* Ajoute un peu d'espace intérieur autour des boutons */
+  border-radius: 20px; /* Ajoute des coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre */
+}
+
+/* Style des boutons */
+.button-64,
+
+#Nameplayer {
+  padding: 10px 20px; /* Ajoute du padding pour un meilleur espacement intérieur */
+  margin: 5px; /* Ajoute une marge autour des boutons */
+  border: none; /* Supprime la bordure par défaut */
+  border-radius: 5px; /* Ajoute des coins arrondis */
+  background-color: #712be1d6; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  font-size: 16px; /* Taille de police */
+  cursor: pointer; /* Change le curseur au survol */
+  transition: background-color 0.3s; /* Ajoute une transition en douceur pour le changement de couleur de fond */
+}
+
+/* Style au survol */
+.button-64:hover,
+#Nameplayer:hover {
+  background-color: #45a049; /* Change la couleur de fond au survol */
+}
+
+/* Style au focus */
+.button-64:focus,
+#Nameplayer:focus {
+  outline: none; /* Supprime la bordure de focus par défaut */
+}
+
