@@ -13,19 +13,6 @@ body {
     background-attachment: fixed;
 }
 
-@media screen and (max-width: 768px) {
-  body {
-      width: 100%; /* Utiliser la largeur totale sur les écrans étroits */
-      height: auto; /* Hauteur automatique */
-  }
-}
-
-
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: auto;
-}
 
 /* Header */
 header {
@@ -138,7 +125,7 @@ main {
 
 .image-container {
   text-align: center;
-  margin-bottom: 20px; /* Séparation */
+  margin-bottom: 10px; /* Séparation */
 }
 
 .image-container img {
@@ -217,41 +204,6 @@ main {
   max-width: 100%;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .player {
-      padding: 10px;
-  }
-.row{
-  width: 500px;
-}
-  .container-action button {
-      font-size: 14px;
-  }
-
-  .menu .btn-roll,
-  .menu .btn-hold {
-      font-size: 14px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  /* Réorganisez les éléments pour s'adapter aux écrans plus petits */
-  .player {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .menu {
-    flex-direction: column;
-  }
-  .row{
-    width: 500px;
-  }
-  .dice-container {
-    text-align: center;
-  }
-}
 
 /* Style du bouton "CHARGER Ki" */
 
@@ -286,8 +238,6 @@ main {
 .menu button:hover {
   background-color: #6c757d; /* Changement de couleur au survol */
 }
-
-
 
 
 #damageEffect2 {

@@ -50,12 +50,10 @@
     </header>
 
     <!-- SELECTION DES JOUEURS -->
-    <main class="container">
-        <div class="row">
-           
-                    
+    <main class="container ">
+        <div class="row justify-content-center ">           
                 <!-- JOUEUR 1 -->
-               <div id="player1" class="player col-4 col-md-4">
+    <div id="player1" class="player col-4">
     <h2 class="Player1">JOUEUR 1</h2>
     <select name="player1" id="select-player-1" class="custom-select">
         <option value="">Liste des combattants</option>
@@ -73,9 +71,9 @@
 
     <div class="image-container">
         <img src="image/illustration/interogation.png" alt="interogation" class="player-sound-1" id="imgPlayer1"/>
-    </div>                   
-    <div id="damageEffect1"></div>
+    </div> 
 
+    <div id="damageEffect1"></div>
     <div class="container" id="action">
         <div class="row justify-content-center align-items-center"> <!-- Alignement horizontal et vertical -->
             <div class="col-lg-11">
@@ -106,7 +104,6 @@
                 </div>                
                     <img src="./image/dés/dice-1.png" alt="dé" class="dice"> 
             </div>
-    
             <!-- JOUEUR 2 -->
             <div id="player2" class="player col-4 col-md-4">
                 <h2 class="Player2">JOUEUR 2</h2>
@@ -126,30 +123,30 @@
                 
                 <div class="image-container">
                     <img src="image/illustration/interogation.png" alt="interrogation" class="player-sound-2" id="imgPlayer2">
-                </div>                
+                </div>    
+
                 <div id="damageEffect2"></div>
                 <div class="container" id="action2">
                     <div class="row justify-content-center align-items-center"> <!-- Alignement horizontal et vertical -->
-                        <div class="col-4 col-lg-11">
+                        <div class="col-lg-11">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <div class="player-2-panel text-center">
-                                        <div id="chargerki2">CHARGER Ki :</div>
-                                    </div>
-                                    <div class="player-current-box">
-                                        <div class="player-current-score text-center" id="current-1"></div>
+                                    <div class="player-2-panel text-center"> <!-- Centrage horizontal -->
+                                        <div id="chargerki2">CHARGER KI :</div>
+                                        <div class="player-current-box" id="current-1"></div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <div class="degat2 text-center"> DÉGÂTS CAUSÉS</div>
-                                    <div class="player-score text-center" id="score-1"></div>
+                                    <div class="degat2 text-center">DÉGÂTS CAUSÉS</div> <!-- Centrage horizontal -->
+                                    <div class="player-score text-center" id="score-1"></div>   
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-            
+
         </div>  
     </main>  
     
