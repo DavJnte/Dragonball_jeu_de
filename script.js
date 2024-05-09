@@ -63,9 +63,6 @@ function choicePlayer() {
     player1.addEventListener('change', (action1) => {
         const character = action1.target.value.toLowerCase();
         imgPlayer1.src = `./image/Combatants/${character}.png`;
-        const audio = new Audio(`./Son&Musique/${character}/${character}_sound.mp3`);
-        audio.play();
-        audio.volume = 0.2;
         player1.disabled = true
         bloquer();
         joueur2debloquer();
@@ -76,9 +73,6 @@ function choicePlayer() {
     player2.addEventListener('change', (action2) => {
         const character = action2.target.value.toLowerCase();
         imgPlayer2.src = `./image/Combatants/${character}.png`;
-        const audio = new Audio(`./Son&Musique/${character}/${character}_sound.mp3`);
-        audio.play();
-        audio.volume = 0.2;
         player2.disabled = true
         debloquer();
         soundback();
@@ -224,29 +218,4 @@ function soundwin() {
     let audio = new Audio('./Son&Musique/soundeffect/win-sound-effect-no-copyright.mp3');
     audio.play();
     audio.volume = 0.3;
-}
-
-// Fonction pour arrêter le clignotement de 'chargeki1'
-function stopClignotement() {
-    clearInterval(clignotementInterval);
-    document.getElementById('chargeki1').style.visibility = "visible";
-}
-
-// Fonction pour démarrer le clignotement
-function demarrerClignotement() {
-    // Démarrez le clignotement si ce n'est pas déjà en cours
-    if (!clignotementEnCours) {
-        imageClignotante = document.getElementById('chargeki1');
-        clignotementInterval = setInterval(clignoter, 800);
-        clignotementEnCours = true;
-    }
-}
-
-// Fonction pour faire clignoter l'image
-function clignoter() {
-    if (imageClignotante.style.visibility === "visible") {
-        imageClignotante.style.visibility = "hidden";
-    } else {
-        imageClignotante.style.visibility = "visible";
-    }
 }
